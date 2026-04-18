@@ -1,2 +1,0 @@
-# myrepository
-学习
