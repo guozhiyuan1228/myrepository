@@ -1,11 +1,15 @@
 1.执行1例复杂查询，展示执行结果截图，并解释Cypher语句含义
 
-路径匹配：MATCH p=(n)-[*..2]-(m) WHERE n.born > 1960 RETURN p
+1.1 路径匹配
+
+MATCH p=(n)-[*..2]-(m) WHERE n.born > 1960 RETURN p
 
 含义：匹配所有长度不超过2的路径，其中起始节点n的属性born大于1960，然后返回完整路径p。
 <img width="1910" height="925" alt="0fa2fd4bbc83934d964869cf839cd472" src="https://github.com/user-attachments/assets/7927ef10-89e6-42e6-acc2-30a524627783" />
 
-聚合与排序：MATCH (n) RETURN count(n) AS total
+1.2 聚合与排序
+
+MATCH (n) RETURN count(n) AS total
 
 含义：计算并返回数据库中节点的总数量。
 <img width="1910" height="925" alt="c4ed837e277552676c51e74a2a3e34ab" src="https://github.com/user-attachments/assets/c45a4f48-7170-4242-b461-8b99f9318fd5" />
