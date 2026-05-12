@@ -16,8 +16,11 @@ MATCH (n:person) RETURN n ORDER BY n.born DESC LIMIT 10
 <img width="1910" height="925" alt="a52790d434687100f214dd14245e6912" src="https://github.com/user-attachments/assets/8829860c-5722-41d9-8e7a-d23a3d2761c9" />
 
 MATCH (p:person)-[r]->(m)
+
 WITH p, COUNT(m) AS movieCount
+
 WHERE movieCount > 2
+
 RETURN p.name, movieCount ORDER BY movieCount DESC LIMIT 10
 
 含义：查询制作电影数量超过2部的人，按制作数量降序排列，返回前10人的姓名和制作电影数。
