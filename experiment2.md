@@ -32,7 +32,7 @@ RETURN p.name, movieCount ORDER BY movieCount DESC LIMIT 10
 
 1.3 路径查找（图算法）
 
-新建数据库Station_GZY，包括添加点、边类型。
+新建数据库Station_GZY，添加点、边。
 <img width="1910" height="925" alt="d8796b9898c2c9a978e68b8e59850d40" src="https://github.com/user-attachments/assets/74076dd7-619f-4278-8669-386a7df28e6b" />
 
 <img width="1910" height="925" alt="29f04ae1472221237f460420ad4e6929" src="https://github.com/user-attachments/assets/13589fa8-8b64-4c0d-b042-86d6f353e96e" />
