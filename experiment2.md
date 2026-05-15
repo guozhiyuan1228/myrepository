@@ -108,5 +108,5 @@ MATCH (p1:Person {name: 'Michael'})-[:FRIENDS]-(common)-[:FRIENDS]-(p2:Person {n
 
 RETURN count(DISTINCT common) AS commonFriendsCount
 
-含义：仅根据FRIENDS关系返回Michael和Karin的共同邻居数量
+含义：仅根据FRIENDS关系返回Michael和Karin的共同邻居数量。
 <img width="1910" height="925" alt="32a31226eb160c5c3154b522d12106c0" src="https://github.com/user-attachments/assets/02ba1919-f198-492c-9b94-5261317c87e9" />
