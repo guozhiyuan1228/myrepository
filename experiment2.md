@@ -55,7 +55,7 @@ WITH x, y CALL algo.shortestPath(x, y) YIELD nodeCount,totalCost,path RETURN nod
 
 2.图遍历
 
-在Station_GZY中导入存储过程BFS并执行。
+在Station_GZY数据库中导入存储过程BFS并执行。
 <img width="1910" height="925" alt="992354d6ea76b8fbbc06d9795dc03162" src="https://github.com/user-attachments/assets/0df7e2ab-ef51-4971-97a4-809bfc801698" />
 
 3.图的中心性
@@ -83,12 +83,28 @@ WITH x, y CALL algo.shortestPath(x, y) YIELD nodeCount,totalCost,path RETURN nod
 <img width="1910" height="925" alt="3808573041a60ad3b5ea4e6dd535b410" src="https://github.com/user-attachments/assets/4f662ef2-6b66-4d4e-9746-9bfd512470a1" />
 
 5.节点嵌入
-将Node2Vec示例数据集导入TuGraph，运行采样步骤成功，通过文字、代码、截图描述步骤
+在Movie数据库中导入存储过程caiyang并执行，运行采样步骤成功。
 <img width="1910" height="925" alt="bd110a6063a9368914730b64e78b2eae" src="https://github.com/user-attachments/assets/0a58c6ca-8dab-4889-8f56-9a6e4c53f035" />
 
-完整实现Node2Vec算法，得到嵌入向量，描述配置过程中解决了哪些问题、用的什么方法（文字、代码、截图）
-
+完整实现Node2Vec算法，得到嵌入向量。
+<img width="1910" height="925" alt="70ef0e65a65fbc73a2d48cd71c9904c8" src="https://github.com/user-attachments/assets/15532f7a-0c8d-4619-83b5-ec631dcf4c46" />
 
 6.链接预测
+新建数据库Neighbor_GZY，添加点、边。
+<img width="1910" height="925" alt="6dace681552090ddd5ab8234c39f6851" src="https://github.com/user-attachments/assets/8a2a611d-c985-4e89-88cb-9c83fd2f5d40" />
 
+<img width="1910" height="925" alt="fd53b4fcf247aec8d0bff84fcb127371" src="https://github.com/user-attachments/assets/b946378c-fc65-4c6c-99b4-00a67e1f96ed" />
 
+MATCH (p1:Person {name: 'Michael'})--(common)--(p2:Person {name: 'Karin'})
+
+RETURN count(DISTINCT common) AS commonNeighborsCount
+
+含义：返回Michael和Karin的共同邻居数量。
+<img width="1910" height="925" alt="070859191744f61c66109211348b042f" src="https://github.com/user-attachments/assets/6e8f67d5-17c2-44f7-8340-a9d19c627d0f" />
+
+MATCH (p1:Person {name: 'Michael'})-[:FRIENDS]-(common)-[:FRIENDS]-(p2:Person {name: 'Karin'})
+
+RETURN count(DISTINCT common) AS commonFriendsCount
+
+含义：仅根据FRIENDS关系返回Michael和Karin的共同邻居数量
+<img width="1910" height="925" alt="32a31226eb160c5c3154b522d12106c0" src="https://github.com/user-attachments/assets/02ba1919-f198-492c-9b94-5261317c87e9" />
