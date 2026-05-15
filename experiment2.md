@@ -83,6 +83,7 @@ WITH x, y CALL algo.shortestPath(x, y) YIELD nodeCount,totalCost,path RETURN nod
 <img width="1910" height="925" alt="3808573041a60ad3b5ea4e6dd535b410" src="https://github.com/user-attachments/assets/4f662ef2-6b66-4d4e-9746-9bfd512470a1" />
 
 5.节点嵌入
+
 在Movie数据库中导入存储过程caiyang并执行，运行采样步骤成功。
 <img width="1910" height="925" alt="bd110a6063a9368914730b64e78b2eae" src="https://github.com/user-attachments/assets/0a58c6ca-8dab-4889-8f56-9a6e4c53f035" />
 
@@ -90,6 +91,7 @@ WITH x, y CALL algo.shortestPath(x, y) YIELD nodeCount,totalCost,path RETURN nod
 <img width="1910" height="925" alt="70ef0e65a65fbc73a2d48cd71c9904c8" src="https://github.com/user-attachments/assets/15532f7a-0c8d-4619-83b5-ec631dcf4c46" />
 
 6.链接预测
+
 新建数据库Neighbor_GZY，添加点、边。
 <img width="1910" height="925" alt="6dace681552090ddd5ab8234c39f6851" src="https://github.com/user-attachments/assets/8a2a611d-c985-4e89-88cb-9c83fd2f5d40" />
 
