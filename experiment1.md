@@ -107,6 +107,7 @@
 新建失败，根据报错信息解决了以下问题：
 
 （1）缺少参数：打开远程终端，进入容器，添加配置参数"enable_plugin":true，重启tugraph服务。
+
 <img width="1910" height="465" alt="db91cbdc5bb6587c4e43ccdcd5af2e61" src="https://github.com/user-attachments/assets/9df82da5-cefb-48e0-a0d8-a0c3544aa1cf" />
 
 <img width="1910" height="925" alt="65e52f85285a3475b9fd4456cc51c0ce" src="https://github.com/user-attachments/assets/a6efbb17-be2d-40be-8d53-65d6bdfb0f91" />
@@ -215,6 +216,19 @@ gcc --version
 <img width="931" height="280" alt="5d8fac0ee74199c8056e3d8beb49eb39" src="https://github.com/user-attachments/assets/ac9ad40b-6393-402a-bb95-2f69b1cdf245" />
 
 （7）找不到liblgraph.so：查找liblgraph.so路径，添加到编译器的默认搜索路径，创建软链接到标准库目录，验证是否可以被链接器识别。
+
+find / -name "liblgraph.so*" 2>/dev/null
+
+echo "/usr/local/lib64/lgraph" > /etc/ld.so.conf.d/lgraph.conf
+
+ldconfig
+
+ldconfig -p | grep lgraph
+
+ls -l /usr/local/lib64/lgraph/liblgraph.so
+
+ln -s /usr/local/lib64/lgraph/liblgraph.so /usr/lib64/liblgraph.so
+
 <img width="1060" height="229" alt="806d3364b9bcd06e9bd0917f6087a43f" src="https://github.com/user-attachments/assets/dbbd584d-be74-4e44-bb03-afe3ae94e25e" />
 
 （8）找不到liblgraph_python_api：查找liblgraph_python_api路径，将路径添加到系统级Python路径。
