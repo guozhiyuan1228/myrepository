@@ -65,6 +65,10 @@ TCG 中的点和边分别表示网络流和流间的因果关系。
 
 3.1 点嵌入
 
+导入node2vec算法。
+<img width="1910" height="925" alt="282ab36921e2e1ae63fa083dec2d9d3b" src="https://github.com/user-attachments/assets/9e1a7a6e-02e4-4249-9e3b-981e9b15f036" />
+
+获取存储过程执行结果。
 
 
 
