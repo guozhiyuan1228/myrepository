@@ -14,16 +14,49 @@
 下载完成。
 <img width="1116" height="208" alt="0d5bc5767e111831f6d4fcc34f45e27c" src="https://github.com/user-attachments/assets/e3550a30-8cbe-4f6d-b4eb-a263e90dcf5e" />
 
+<img width="1850" height="724" alt="a38668ac51ec9c8ec9c3c0b63eea721c" src="https://github.com/user-attachments/assets/3f035e63-8551-43d9-b111-4888f56a8b58" />
+
 2.两种流量图建模方法，写代码提取数据集中的对应字段，可视化或者代码导入TuGraph
 
+2.1 {IP,port}对作为图中的顶点（HCG）
 
+HCG表示为G(V,E)，将节点{IP,port}抽象为一个点vi∈V，若vi和vj之间有通信，则在vi和vj之间建立一条边eij∈E。
 
+新建数据库Traffic_HCG。
 
+<img width="506" height="201" alt="2c4447599c2e3ba17b7b8ce5bcae1c2e" src="https://github.com/user-attachments/assets/d24be25d-7243-4ad3-a650-0a6f578e7782" />
 
+创建点类型、边类型。
+<img width="1910" height="925" alt="1879b4a29b3b4f7927a500d292281c80" src="https://github.com/user-attachments/assets/5bb26ee3-7585-4843-a87d-58c39b80e666" />
 
+<img width="1910" height="925" alt="2eae8ded8286dd185254af7574b18353" src="https://github.com/user-attachments/assets/fe91e8c9-5ba2-427a-be72-93c92988753a" />
 
+撰写HCG.py采样+提取数据集Dataset-Unicauca-Version2-87Atts.csv中的ip和port字段，并组合形成id(ip:port)字段。
+<img width="813" height="800" alt="bc9908095ab9ee244e1077eeb03d1fda" src="https://github.com/user-attachments/assets/c0b27a48-7ba3-4c02-8583-4e2a133dce97" />
 
+<img width="813" height="800" alt="c913503acbd47eacf32cbdac99df9846" src="https://github.com/user-attachments/assets/fa74a3b8-ab03-43c7-89ba-079045bda310" />
 
+运行结果如下。
+
+<img width="706" height="691" alt="56daa10a92a2e950032afb1285d6d9b0" src="https://github.com/user-attachments/assets/a25e5968-043b-4392-acc1-a8f570de34c1" />
+
+<img width="465" height="50" alt="cc642387a08ab056525dcdc7ddef2ff7" src="https://github.com/user-attachments/assets/c5868ac9-61ce-45e9-bbba-b54fc996e0d3" />
+
+导入hcgnodes.csv和hcgedges.csv数据。
+<img width="1910" height="925" alt="4b8f21a0c19e60d430ebe285ab90e747" src="https://github.com/user-attachments/assets/0e31dda3-d357-4bfd-b336-ecd9cf3139c3" />
+
+<img width="1910" height="925" alt="6d623906a6bc7dbdb2f49376ecd505e8" src="https://github.com/user-attachments/assets/0f9f6b28-e283-4606-afd7-4c8aafc6a89b" />
+
+<img width="1910" height="925" alt="8a15ee2bbc2b5482d6567504a069d555" src="https://github.com/user-attachments/assets/776dbab0-af07-4fe6-ab9e-572f4cd1c8a0" />
+
+<img width="1910" height="925" alt="4bfd17107dfb1f143b4520f777ab9272" src="https://github.com/user-attachments/assets/7c857597-0bb2-438d-8d67-559180920052" />
+
+导入完成后执行查询验证：MATCH (n:HCGNode)-[r:COMMUNICATES]->(m) RETURN n,r,m LIMIT 200
+<img width="1910" height="925" alt="f20a946ed6f9190d0ecedf12425af1e7" src="https://github.com/user-attachments/assets/8dea77c6-1c7f-406f-a9c3-615631111c93" />
+
+2.2 流作为图中的顶点（TCG）
+
+TCG 中的点和边分别表示网络流和流间的因果关系。
 
 
 
