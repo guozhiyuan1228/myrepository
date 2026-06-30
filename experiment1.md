@@ -136,7 +136,7 @@ mkdir -p /etc/yum.repos.d
 
 #下载阿里云的CentOS 7 vault源配置
 
-curl -o /etc/yum.repos.d/Cent0S-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
 
 #清理缓存
 
@@ -166,7 +166,7 @@ cat <<EOF > /etc/yum.repos.d/CentOS-SCLo-scl.repo
 
 [centos-sclo-sclo]
 
-name=Cent0S-7 - SCLo sclo
+name=CentOS-7 - SCLo sclo
 
 baseurl=https://mirrors.aliyun.com/centos/7/sclo/x86_64/sclo/
 
@@ -182,7 +182,7 @@ cat <<EOF > /etc/yum.repos.d/Cent0S-SCLo-scl-rh.repo
 
 [centos-sclo-rh]
 
-name=Cent0S-7 - SCLo rh
+name=CentOS-7 - SCLo rh
 
 baseurl=https://mirrors.aliyun.com/centos/7/sclo/x86_64/rh/
 
@@ -205,9 +205,9 @@ yum repolist | grep scl
 
 将新版gcc软链接到/usr/local/bin，验证版本：
 
-ln - sf /opt/rh/devtoolset-9/root/usr/bin/g++ /usr/local/bin/g++
+ln -sf /opt/rh/devtoolset-9/root/usr/bin/g++ /usr/local/bin/g++
 
-ln - sf /opt/rh/devtoolset-9/root/usr/bin/gcc /usr/local/bin/gcc
+ln -sf /opt/rh/devtoolset-9/root/usr/bin/gcc /usr/local/bin/gcc
 
 g++ --version
 
