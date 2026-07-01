@@ -42,12 +42,19 @@
 
 获取存储过程的执行结果。
 
+<img width="1920" height="830" alt="1c152a908d8d8156d3353f1f084123fd" src="https://github.com/user-attachments/assets/10bb56fd-2f8c-4d3b-9dfd-90bc25a2565d" />
 
 用GET方法导出执行结果。
 
+<img width="1521" height="770" alt="b8fb293b761423bc8595af658bf4598f" src="https://github.com/user-attachments/assets/a2cedf68-1255-421b-86e7-6ab272f5b7b2" />
 
-4.KNN分类器预测并显示评价指标
+<img width="775" height="85" alt="73a7faf3529ff6723a02c41bb47d4c73" src="https://github.com/user-attachments/assets/a2c61e67-00bb-4fc3-b319-8f4b51d584d7" />
 
+<img width="1423" height="739" alt="7587e55cbebf16d5e9be0ec272ffa1df" src="https://github.com/user-attachments/assets/f5cbc884-17f7-4cc8-b646-07acb6a02816" />
+
+3.KNN分类器预测并显示评价指标
+
+<img width="1614" height="810" alt="90d78835844aa19f72e085d120eb7cdc" src="https://github.com/user-attachments/assets/dc0c9f14-0426-4f5e-9c4b-b0e569ec1319" />
 
 
 
