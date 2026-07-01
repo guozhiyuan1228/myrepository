@@ -9,81 +9,72 @@
 注册Kaggle账号，填写基本信息，安装Header Editor插件，邮箱获取验证码，注册成功。
 
 登录，下载数据集。
+
 <img width="1920" height="920" alt="b8485c35e33620b43312a4beaefbf902" src="https://github.com/user-attachments/assets/d20d7d4b-352b-42c0-ab68-df69c965676e" />
 
 下载完成。
+
 <img width="1116" height="208" alt="0d5bc5767e111831f6d4fcc34f45e27c" src="https://github.com/user-attachments/assets/e3550a30-8cbe-4f6d-b4eb-a263e90dcf5e" />
 
 <img width="1850" height="724" alt="a38668ac51ec9c8ec9c3c0b63eea721c" src="https://github.com/user-attachments/assets/3f035e63-8551-43d9-b111-4888f56a8b58" />
 
-2.两种流量图建模方法，写代码提取数据集中的对应字段，可视化或者代码导入TuGraph
+2.流量图建模，写代码提取数据集中的对应字段，可视化或者代码导入TuGraph
 
-2.1 {IP,port}对作为图中的顶点（HCG）
+{IP,port}对作为图中的顶点（HCG）。
 
 HCG表示为G(V,E)，将节点{IP,port}抽象为一个点vi∈V，若vi和vj之间有通信，则在vi和vj之间建立一条边eij∈E。
 
-新建数据库Traffic_HCG。
+撰写generate_hcg.py提取数据集Dataset-Unicauca-Version2-87Atts.csv中我们需要的字段。
 
-<img width="506" height="201" alt="2c4447599c2e3ba17b7b8ce5bcae1c2e" src="https://github.com/user-attachments/assets/d24be25d-7243-4ad3-a650-0a6f578e7782" />
+<img width="1514" height="765" alt="932fd974dc7bee6910ec366bb0657a74" src="https://github.com/user-attachments/assets/0a96d750-f1e0-43a6-80e8-1d86c54be444" />
+
+<img width="790" height="60" alt="22e95bb69940a20946a212006080d772" src="https://github.com/user-attachments/assets/8b60a3b8-b6fc-4121-8bed-263657f07b96" />
+
+新建数据库HCG。
+
+<img width="1920" height="900" alt="c820d8752d5ea0776a2eeb6978018986" src="https://github.com/user-attachments/assets/00acb16b-cb62-4f06-9c92-2eaba36b2ae5" />
 
 创建点类型、边类型。
-<img width="1910" height="925" alt="1879b4a29b3b4f7927a500d292281c80" src="https://github.com/user-attachments/assets/5bb26ee3-7585-4843-a87d-58c39b80e666" />
 
-<img width="1910" height="925" alt="2eae8ded8286dd185254af7574b18353" src="https://github.com/user-attachments/assets/fe91e8c9-5ba2-427a-be72-93c92988753a" />
+<img width="1920" height="900" alt="6efd801b2c69bfbfa116e46313126cf9" src="https://github.com/user-attachments/assets/7ec343d0-7756-49fa-af08-7b5575cd47ba" />
 
-撰写HCG.py采样+提取数据集Dataset-Unicauca-Version2-87Atts.csv中的ip和port字段，并组合形成id(ip:port)字段。
-<img width="813" height="800" alt="bc9908095ab9ee244e1077eeb03d1fda" src="https://github.com/user-attachments/assets/c0b27a48-7ba3-4c02-8583-4e2a133dce97" />
+<img width="1920" height="900" alt="da0104af1f82bc3aed97700baeca0bf9" src="https://github.com/user-attachments/assets/254e5adf-dd40-41c8-ba66-a8f705240bb1" />
 
-<img width="813" height="800" alt="c913503acbd47eacf32cbdac99df9846" src="https://github.com/user-attachments/assets/fa74a3b8-ab03-43c7-89ba-079045bda310" />
+导入hcg_nodes.csv和hcg_edges.csv数据。
 
-运行结果如下。
+<img width="1920" height="900" alt="8aab9fd8533d3d3ee120dc2f829d4f88" src="https://github.com/user-attachments/assets/007aa25e-54c0-41a4-a4ea-cf4f06cfdb71" />
 
-<img width="706" height="691" alt="56daa10a92a2e950032afb1285d6d9b0" src="https://github.com/user-attachments/assets/a25e5968-043b-4392-acc1-a8f570de34c1" />
+<img width="1920" height="900" alt="b9deb8cc707c945bbd36809c27f0eea6" src="https://github.com/user-attachments/assets/a3a44aff-ce37-436d-9584-6b71fa6b510f" />
 
-<img width="465" height="50" alt="cc642387a08ab056525dcdc7ddef2ff7" src="https://github.com/user-attachments/assets/c5868ac9-61ce-45e9-bbba-b54fc996e0d3" />
+<img width="1920" height="900" alt="e0064d70fd6cf9fa03c8ed8da0b17223" src="https://github.com/user-attachments/assets/1fff0e63-0f6d-40f1-8d81-d2571bf65a90" />
 
-导入hcgnodes.csv和hcgedges.csv数据。
-<img width="1910" height="925" alt="4b8f21a0c19e60d430ebe285ab90e747" src="https://github.com/user-attachments/assets/0e31dda3-d357-4bfd-b336-ecd9cf3139c3" />
+<img width="1920" height="900" alt="4b2111ef4f0089415ae9f8477496c23a" src="https://github.com/user-attachments/assets/116a3d7d-1e02-4ccc-a0f7-9f2dc0cea978" />
 
-<img width="1910" height="925" alt="6d623906a6bc7dbdb2f49376ecd505e8" src="https://github.com/user-attachments/assets/0f9f6b28-e283-4606-afd7-4c8aafc6a89b" />
+导入完成后在图分析处执行查询验证：MATCH (n) - [r] - () RETURN n, r LIMIT 100
 
-<img width="1910" height="925" alt="8a15ee2bbc2b5482d6567504a069d555" src="https://github.com/user-attachments/assets/776dbab0-af07-4fe6-ab9e-572f4cd1c8a0" />
+<img width="1920" height="900" alt="978f3d859db303d7dce1fd547671f996" src="https://github.com/user-attachments/assets/0e3e02ab-8132-4c29-a0f8-2da2773f7d7d" />
 
-<img width="1910" height="925" alt="4bfd17107dfb1f143b4520f777ab9272" src="https://github.com/user-attachments/assets/7c857597-0bb2-438d-8d67-559180920052" />
+<img width="1920" height="900" alt="d4aed658ab5b575f292ffa05e3be17cd" src="https://github.com/user-attachments/assets/6840f57d-2da2-4e7f-8b91-5b1c038f85b2" />
 
-导入完成后执行查询验证：MATCH (n:HCGNode)-[r:COMMUNICATES]->(m) RETURN n,r,m LIMIT 200
-<img width="1910" height="925" alt="f20a946ed6f9190d0ecedf12425af1e7" src="https://github.com/user-attachments/assets/8dea77c6-1c7f-406f-a9c3-615631111c93" />
-
-2.2 流作为图中的顶点（TCG）
-
-TCG 中的点和边分别表示网络流和流间的因果关系。
-
-
-
-
-3.点嵌入/边嵌入、特征融合，通过文字、代码、截图描述步骤
-
-3.1 点嵌入
+3.点嵌入、特征融合，通过文字、代码、截图描述步骤
 
 导入node2vec算法。
-<img width="1910" height="925" alt="282ab36921e2e1ae63fa083dec2d9d3b" src="https://github.com/user-attachments/assets/9e1a7a6e-02e4-4249-9e3b-981e9b15f036" />
+
+<img width="1920" height="900" alt="65bd2b86a67dcf5b9f259629d3bd76c8" src="https://github.com/user-attachments/assets/19d46e1c-a670-420b-a0d8-8eabef5bc1a4" />
+
+<img width="1920" height="900" alt="772c6614a89576e0a9bc2dd194b54d7b" src="https://github.com/user-attachments/assets/f47ed04e-98b5-4f26-a27a-8c23d16d5660" />
 
 获取存储过程执行结果。
 
+<img width="1920" height="900" alt="b10c8c7870c570033b0588b9d34f8e1d" src="https://github.com/user-attachments/assets/b9d7f988-def5-4693-97dc-6b8ad79345bd" />
 
+导出执行结果。
 
+<img width="1539" height="766" alt="721417a99e6ec10013042416847c04f5" src="https://github.com/user-attachments/assets/b305ab65-2207-4468-b9eb-d4024b91e77d" />
 
+<img width="790" height="136" alt="b3e79b384806767c5100d68f3afb3866" src="https://github.com/user-attachments/assets/63d29c9d-9337-4eae-93e8-45941171a21f" />
 
+4.KNN分类器预测并显示评价指标
 
+<img width="1535" height="769" alt="52eb63713eb767765cf5d8c141ce868d" src="https://github.com/user-attachments/assets/07efb5f8-c9a1-47a1-a380-570767a946dc" />
 
-
-
-
-
-
-
-
-
-
-
-4.测试至少3种不同的分类器，给出评价指标
