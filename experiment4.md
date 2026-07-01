@@ -1,8 +1,10 @@
+续experiment3.md
+
 1.流量图建模（代码提取数据集中前100行的对应字段，可视化或者代码导入TuGraph）
 
 流作为图中的顶点（TCG），TCG 中的点和边分别表示网络流和流间的因果关系。
 
-撰写generate_tcg.py提取数据集Dataset-Unicauca-Version2-87Atts.csv中我们需要的字段，并计算因果关系。
+编写generate_tcg.py提取数据集Dataset-Unicauca-Version2-87Atts.csv中我们需要的字段，并计算因果关系。
 
 <img width="1534" height="763" alt="186e97e63249fed99dd7f91233368c40" src="https://github.com/user-attachments/assets/6a916673-c35e-4915-9e9e-101671d48b6a" />
 
@@ -38,9 +40,13 @@
 
 <img width="1920" height="830" alt="5a8942fabdf57cb72f6313aebb8b21a0" src="https://github.com/user-attachments/assets/19a55ce0-beb3-4ddb-94b8-c18191fd4e07" />
 
+获取存储过程的执行结果。
 
 
+用GET方法导出执行结果。
 
+
+4.KNN分类器预测并显示评价指标
 
 
 
